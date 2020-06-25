@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab3Page } from './tab3.page';
+import { NovaeightPage } from './novaeight.page';
+import { NovaeightPageRoutingModule } from './novaeight-routing.module';
 
 describe('Tab3Page', () => {
-  let component: Tab3Page;
-  let fixture: ComponentFixture<Tab3Page>;
+  let component: NovaeightPage;
+  let fixture: ComponentFixture<NovaeightPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Tab3Page],
-      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
+      declarations: [NovaeightPage],
+      imports: [IonicModule.forRoot(), NovaeightPage]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Tab3Page);
+    fixture = TestBed.createComponent(NovaeightPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
