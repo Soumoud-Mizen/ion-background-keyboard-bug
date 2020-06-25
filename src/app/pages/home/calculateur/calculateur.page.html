@@ -5,5 +5,17 @@
 </ion-header>
 
 <ion-content>
+  <ion-segment [(ngModel)]="hemoragie" color='primary'>
+    <ion-segment-button value="hemoragie" >
+      <ion-label>Hémoragie</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="chirurgie">
+      <ion-label>Chirurgie</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="prophylaxie">
+      <ion-label>Prophylaxie</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 
+  
 </ion-content>

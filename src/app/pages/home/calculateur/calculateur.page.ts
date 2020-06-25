@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculateur.page.scss'],
 })
 export class CalculateurPage implements OnInit {
-
+  hemoragie='hemoragie'
   constructor() { }
 
   ngOnInit() {
