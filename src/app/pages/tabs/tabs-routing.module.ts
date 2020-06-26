@@ -5,10 +5,13 @@ import { TabsPage } from './tabs.page';
 const routes: Routes = [
   {
     
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
-     
+      {
+        path: '',
+        loadChildren: () => import('src/app/pages/home/contact/contact.module').then(m => m.Tab2PageModule)
+      },
       {
         path: 'contact',
         loadChildren: () => import('src/app/pages/home/contact/contact.module').then(m => m.Tab2PageModule)

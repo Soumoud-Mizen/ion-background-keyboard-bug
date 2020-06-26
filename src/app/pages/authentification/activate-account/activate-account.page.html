@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Activation de compte</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="log-in"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup]="createAccount">
+  <ion-item lines="none">
+    <ion-label>Prenom</ion-label>
+    <ion-input formControlName="prenom"></ion-input>
+ 
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>Nom</ion-label>
+    <ion-input formControlName="nom"></ion-input>
+ 
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>Email</ion-label>
+    <ion-input formControlName="email"></ion-input>
+ 
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>Portable</ion-label>
+    <ion-input formControlName="portable"></ion-input>
+ 
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>Wilaya</ion-label>
+    <ion-input formControlName="wilaya"></ion-input>
+ 
+  </ion-item>
+</form>
+</ion-content>

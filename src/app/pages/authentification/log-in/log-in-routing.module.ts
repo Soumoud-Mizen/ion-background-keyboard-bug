@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AcivateAccountPage } from './acivate-account.page';
+import { LogInPage } from './log-in.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AcivateAccountPage
+    component: LogInPage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AcivateAccountPageRoutingModule {}
+export class LogInPageRoutingModule {}

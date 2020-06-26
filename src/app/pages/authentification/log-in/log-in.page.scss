@@ -1,0 +1,25 @@
+ion-card{
+    transform: translateY(-45%);
+    top: 35%;
+    position: absolute;
+}
+.title{
+    text-align: center;
+}
+text{
+    color: #3dc2ff;
+}
+.input{
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+}
+.validate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+.bottom {
+    position: absolute;
+    bottom: 0;
+}

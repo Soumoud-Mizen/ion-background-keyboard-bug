@@ -4,24 +4,35 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    loadChildren: () => import('./pages/authentification/log-in/log-in.module').then( m => m.LogInPageModule)
+  },
+  {
+    path: 'log-in',
+    loadChildren: () => import('./pages/authentification/log-in/log-in.module').then( m => m.LogInPageModule)
+  },
+  {
+    path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: 'calculateur',
     loadChildren: () => import('./pages/home/calculateur/calculateur.module').then( m => m.CalculateurPageModule)
   },
+  
   {
-    path: 'login',
-    loadChildren: () => import('./pages/authentification/login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'acivate-account',
-    loadChildren: () => import('./pages/authentification/acivate-account/acivate-account.module').then( m => m.AcivateAccountPageModule)
+    path: 'activate-account',
+    loadChildren: () => import('./pages/authentification/activate-account/activate-account.module').then( m => m.ActivateAccountPageModule)
   },
   {
     path: 'create-account',
     loadChildren: () => import('./pages/authentification/create-account/create-account.module').then( m => m.CreateAccountPageModule)
-  }
+  },
+  {
+    path: 'activate-account',
+    loadChildren: () => import('./pages/authentification/activate-account/activate-account.module').then( m => m.ActivateAccountPageModule)
+  },
+ 
+  
 ];
 @NgModule({
   imports: [
