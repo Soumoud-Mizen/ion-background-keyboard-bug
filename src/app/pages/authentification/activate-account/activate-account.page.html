@@ -1,38 +1,69 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Activation de compte</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button color="light" defaultHref="log-in"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-<form [formGroup]="createAccount">
-  <ion-item lines="none">
-    <ion-label>Prenom</ion-label>
-    <ion-input formControlName="prenom"></ion-input>
- 
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label>Nom</ion-label>
-    <ion-input formControlName="nom"></ion-input>
- 
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label>Email</ion-label>
-    <ion-input formControlName="email"></ion-input>
- 
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label>Portable</ion-label>
-    <ion-input formControlName="portable"></ion-input>
- 
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label>Wilaya</ion-label>
-    <ion-input formControlName="wilaya"></ion-input>
- 
-  </ion-item>
-</form>
+  <div class="background-image">
+    <div class="logo-row">
+      <img class="logo-home" src="assets/img/logo.png" alt="logo">
+    </div>
+    <div class="wel-text">
+      Activation de compte
+    </div>
+    <div class="btns-ctn">
+      <form [formGroup]="createAccount" (submit)="processForm(event)">
+
+
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Prenom</ion-label>
+          <ion-input formControlName="prenom"></ion-input>
+          <ion-icon name="person" slot="start" color="primary"></ion-icon>
+        </ion-item>
+
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input formControlName="nom" required></ion-input>
+          <ion-icon name="person" slot="start" color="primary"></ion-icon>
+        </ion-item>
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email"></ion-input>
+          <ion-icon name="mail" slot="start" color="primary"></ion-icon>
+        </ion-item>
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Portable</ion-label>
+          <ion-input formControlName="portable"></ion-input>
+          <ion-icon src="assets/icon/phone.svg" slot="start" color="primary"></ion-icon>
+        </ion-item>
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Téléphone</ion-label>
+          <ion-input formControlName="phone"></ion-input>
+          <ion-icon name="call" slot="start" color="primary"></ion-icon>
+        </ion-item>
+       
+        <ion-item class="background-transparent" lines="none" >
+          <ion-label position="floating">Wilayates</ion-label>
+
+          <ion-select value="sharedService.districtList[1]" formControlName="wilaya" okText="Ok" cancelText="Annuler"
+            style="color: #fff;">
+            <ion-select-option *ngFor="let wilaya of wilaya" [selected]="wilaya== 'ADRAR	SHIE'" value="{{wilaya}}">
+              {{wilaya}}</ion-select-option>
+          </ion-select>
+          <ion-icon src="assets/icon/pin.svg" slot="start" color="primary"></ion-icon>
+
+        </ion-item>
+        <ion-item lines="none" class="background-transparent terms">
+
+          <ion-label color="light">je suis d'accord avec les Termes et conditions</ion-label><br>
+          <ion-checkbox formControlName="TAndC" slot="start"> </ion-checkbox>
+        </ion-item>
+        <ion-item class="background-transparent" lines="none">
+          <ion-label color="light">Activer la notification par email</ion-label><br>
+          <ion-checkbox formControlName="TAndC" slot="start"> </ion-checkbox>
+
+        </ion-item>
+        <ion-button class="button-starter" color="primary" routerLink="/tabs/contact">Activer mon compte
+        </ion-button>
+      </form>
+    </div>
+  </div>
 </ion-content>
+<ion-footer>
+  <img src="assets/img/logo_NOVO.png">
+</ion-footer>

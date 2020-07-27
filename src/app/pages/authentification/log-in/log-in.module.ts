@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogInPageRoutingModule } from './log-in-routing.module';
 
 import { LogInPage } from './log-in.page';
+import { ForgotCodeComponent } from 'src/app/components/forgot-code/forgot-code.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { LogInPage } from './log-in.page';
     ReactiveFormsModule,
     LogInPageRoutingModule
   ],
-  declarations: [LogInPage]
+  declarations: [LogInPage, ForgotCodeComponent]
 })
 export class LogInPageModule {}
 

@@ -1,35 +1,53 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-
 <ion-content>
-  <form [formGroup]="loginform">
+    <div class="background-image">
 
-    <ion-card class="card-center"> 
-      <ion-card-header>
-        <ion-card-title class="title">Calcul8</ion-card-title><br>
-        <ion-card-subtitle class="title">Calculateur de dose selon la posologie de produit NovoEight</ion-card-subtitle>
-    
-      </ion-card-header>
 
-      <ion-card-content>
-        <ion-label text-center>Code d'activation de compte</ion-label>
-        <ion-input class="input" type="password" placeholder="code" formControlName="username"></ion-input>
-        <div class="validate">
-
-          <ion-button color="secondary" routerLink="/activate-account"> valider</ion-button>
+        <div class="logo-row">
+            <img class="logo-home" src="assets/img/logo.png" alt="logo">
         </div>
-        <p>je n'ai pas de code: <text>Obtenir un code</text></p><br>
-        <p>je sui déjà enregistré et j'ai besion d'un nouveau code d'activation:<br>
-          <text>Demande de nouveau code</text></p>
-      </ion-card-content>
-      
-    </ion-card>
-    <div class="bottom">
-      <img src="/assets/img/logo_NOVO.PNG">
+        <div class="wel-tect">
+            Calculateur de dose selon<br>
+            la posologie de<br>
+            produit NOVOEIGHT
+        </div>
+
+        <div class="btns-ctn">
+            
+            <form [formGroup]="loginform" class="ctn-controls ">
+
+                <ion-item class="background-transparent" lines="none">
+                    <ion-label position="floating" color="light">
+                        Code d'acivation de compte
+                    </ion-label>
+                    <ion-input type="password" formControlName="code" required></ion-input>
+                </ion-item>
+
+                <div *ngIf="submitted && loginform.password.errors" class="invalid-feedback">
+                    <ion-item *ngIf="loginform.password.errors.required">
+                        <p style="color:red">Mot de passe requis !</p>
+                    </ion-item>
+                    <ion-item *ngIf="loginform.password.errors.minlength">
+                        <p style="color:red">
+                            Le mot de passe doit être au moins de 6 caractères !
+                        </p>
+                    </ion-item>
+                </div>
+                <br>
+
+                <ion-button class="button-starter" color="primary" routerLink="/activate-account">Valider
+                </ion-button>
+<br>                            <div style="bottom:0;  color:#eee">
+                    <p>je n'ai pas de code: <text (click)="forgotCode()">Obtenir un code</text></p>
+        <p>je sui déjà enregistré et j'ai besion <text routerLink="/create-account">d'un nouveau code d'activation</text>
+          </p>
+                </div>
+                <br />
+            </form>
+        </div>
+
     </div>
-  </form>
 </ion-content>
+
+<ion-footer>
+    <img src="assets/img/logo_NOVO.png">
+</ion-footer>

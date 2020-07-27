@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar style="--background: transparent;">
+    <ion-buttons slot="end">
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container">
+    <div class="wel-tect">
+      Demand de code<br>
+      d'activation<br>
+    </div>
+    <div class="btns-ctn">
+
+      <form [formGroup]="codeForm" class="ctn-controls ">
+<p>
+  Vous avez déjà un compte?
+Vous souhaitez recevoir un nouveau
+code d’activation?
+</p>
+
+        <ion-item class="background-transparent" lines="none" style="margin: 20px;">
+          <ion-label position="floating" color="light">
+            Votre Email
+          </ion-label>
+          <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-button class="button-starter" color="primary" (click)='closeModal()'>Recevoir un code
+        </ion-button>
+      </form>
+    </div>
+
+  </div>
+</ion-content>

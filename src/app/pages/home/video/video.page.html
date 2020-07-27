@@ -5,5 +5,14 @@
 </ion-header>
 
 <ion-content>
+  <div class="title">Vidéo reconstitution de Novoeight </div>
+  <video id='play_video'   width="100%" height="75%"controls="controls" webkit-playsinline="webkit-playsinline" class="videoPlayer" controlsList="nodownload">             
+    <source id='mp4Source' src="" type="video/mp4"/>
+     </video>
+     <ion-item lines="none">
+       <ion-label class="label-toggle">Vidéo téléchargée</ion-label>
+       <ion-toggle [(ngModel)]="iToggle" (ionChange)="toggle()"></ion-toggle>
+       <ion-label class="label-toggle">Vidéo en Streaming</ion-label>
+     </ion-item>
 
 </ion-content>

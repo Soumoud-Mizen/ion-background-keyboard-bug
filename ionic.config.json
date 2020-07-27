@@ -1,7 +1,8 @@
 {
   "name": "Calcul8",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

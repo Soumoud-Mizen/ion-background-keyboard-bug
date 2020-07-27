@@ -1,0 +1,46 @@
+.container{
+    background: #001965;
+    height: 100%;
+    width: 100%;
+}
+
+.btns-ctn {
+    position: absolute;
+    text-align: center;
+    width: 96%;
+    height: 50%;
+    bottom: 5%;
+    right: 2%;
+    left: 2%;
+    background: #001965;
+    border-radius: 15px;
+}
+.wel-tect {
+    font-size: 1em;
+    width: 100%;
+    color: #ffffff;
+    font-weight: bold;
+    font-style: 'Apis Regular' !important;
+    text-align: center;
+    text-transform: uppercase;
+    bottom: 62%;
+    position: absolute;
+}
+
+.background-transparent{
+    --background: transparent;
+}
+ion-input{
+    color: #fff;
+    border-left: 1px solid var(--ion-color-primary);
+    border-bottom: 1px solid var(--ion-color-primary);
+}
+.button-starter{
+    --border-radius: 30px;
+  --color: var(--ion-color-primary);
+  --font-weight: bold;
+
+}
+p{
+    color: #fff;
+}

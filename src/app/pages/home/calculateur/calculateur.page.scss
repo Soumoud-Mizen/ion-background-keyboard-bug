@@ -1,0 +1,139 @@
+$track-w: 12.5em;
+$track-h: 0.25em;
+$thumb-d: 1.2em;
+@mixin track() {
+    box-sizing: border-box;
+    border: none;
+    width: $track-w;
+    height: $track-h;
+    background: -webkit-linear-gradient(180deg, rgb(203, 235, 142) 0%, rgb(163, 209, 76) 39%, rgb(109, 167, 0) 100%);
+}
+
+@mixin thumb() {
+    margin-top: -0.325em;
+    box-sizing: border-box;
+    border: none;
+    width: 20px;
+    height: $thumb-d;
+    background: #001965;
+    clip-path: polygon(0 0, 70% 0, 100% 40%, 100% 60%, 70% 100%, 0 100%);
+    transform: rotate(-90deg);
+    border-radius: 7px;
+}
+input[type="range"] {
+    &,
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+    position: relative;
+    top: 50%;
+    width: 326px;
+    transform: translate(-30%, 190px) rotate(-90deg);
+    background: transparent;
+    font: 1em/1 arial, sans-serif;
+    /* font: 1em/1 arial, sans-serif; */
+    font: 1em/1 arial, sans-serif;
+    &::-webkit-slider-runnable-track {
+        @include track;
+    }
+    &::-moz-range-track {
+        @include track;
+    }
+    &::-ms-track {
+        @include track;
+    }
+
+    &::-webkit-slider-thumb {
+        margin-top: 0.5 * ($track-h - $thumb-d);
+        @include thumb;
+    }
+    &::-moz-range-thumb {
+        @include thumb;
+    }
+    &::-ms-thumb {
+        margin-top: 0;
+        @include thumb;
+    }
+
+    &::-ms-tooltip {
+        display: none;
+    }
+}
+
+.left-container {
+   
+    border: 1px solid red;
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+.right-container{
+    border: 1px solid blue;
+    height: 100%;
+    width: 27%;
+    float: left;
+    margin-left: 2%;
+}
+
+.rangeWrap {
+    width: 40%;
+}
+
+.rangeWrap .ticks {
+    display: flex;
+    justify-content: space-around;
+    height: 6px;
+    margin: 0 5px 0 6px;
+    font: 10px Arial;
+    counter-reset: count -1;
+    transform: translate(-39%, 184px) rotate(270deg);
+}
+.rangeWrap .ticks > div {
+    height: 100%;
+    width: 1px;
+    background: silver;
+    counter-increment: count 1;
+}
+.rangeWrap .ticks > div:nth-child(5n - 4) {
+    height: 200%;
+}
+
+.ticks > div > div {
+    transform: rotate(90deg);
+    width: 21px;
+}
+
+.element-one{
+    height: 30%;
+    margin-top: 2%;
+    display: flex;
+    text-align: center;
+    color: #00005a;
+    align-items: center;
+    border-radius: 13px;
+    margin: 2%;
+    padding: 7%;
+    box-shadow: 9px 8px 20px 11px #03066b14;
+    font-family: 'Apis Bold' !important;
+
+}
+.element-two{
+    height: 25%;
+    margin-top: 2%;
+    display: flex;
+    text-align: center;
+    color: #00005a;
+    align-items: center;
+    border-radius: 13px;
+    margin: 2%;
+    padding: 7%;
+    box-shadow: 9px 8px 20px 11px #03066b14;
+    font-family: 'Apis Bold' !important;
+    transform: box-shadow 1s;
+}
+.active-element{
+    background: #001965;
+    color: #fff;
+    clip-path: polygon(100% 0, 100% 40%, 96% 49%, 100% 60%, 100% 99%, 1% 100%, 0 0);
+
+}

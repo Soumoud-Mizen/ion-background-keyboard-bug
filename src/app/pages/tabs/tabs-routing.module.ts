@@ -4,13 +4,17 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    
+
     path: '',
     component: TabsPage,
     children: [
       {
         path: '',
-        loadChildren: () => import('src/app/pages/home/contact/contact.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('src/app/pages/home/calculateur/calculateur.module').then(m => m.CalculateurPageModule)
+      },
+      {
+        path: 'calculateur',
+        loadChildren: () => import('src/app/pages/home/calculateur/calculateur.module').then(m => m.CalculateurPageModule)
       },
       {
         path: 'contact',
@@ -25,19 +29,15 @@ const routes: Routes = [
         loadChildren: () => import('src/app/pages/home/novaeight/novaeight.module').then(m => m.Tab3PageModule)
       },
       {
-        path: 'calculateur',
-        loadChildren: () => import('src/app/pages/home/calculateur/calculateur.module').then(m => m.CalculateurPageModule)
-      },
-      {
         path: '',
-        redirectTo: '/tabs/contact',
+        redirectTo: '/tabs/calculateur',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/contact',
+    redirectTo: '/tabs/calculateur',
     pathMatch: 'full'
   }
 ];
@@ -46,4 +46,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

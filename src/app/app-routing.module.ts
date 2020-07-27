@@ -32,6 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/authentification/activate-account/activate-account.module').then( m => m.ActivateAccountPageModule)
   },
  
+ 
   
 ];
 @NgModule({

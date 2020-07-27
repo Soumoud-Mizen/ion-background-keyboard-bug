@@ -1,12 +1,65 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Demande de créaion de compte</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button color="light" defaultHref="log-in"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="background-image">
+    <div class="logo-row">
+      <img class="logo-home" src="assets/img/logo.png" alt="logo">
+    </div>
+    <div class="wel-text">
+      Créer un compte
+    </div>
+    <div class="btns-ctn">
+      <form [formGroup]="createAccount" (submit)="processForm(event)">
 
+        <p>Faire la demande d’un compte de
+          Novo Nordisk Algérie pour l’utilisation
+          de notre application Calcul8</p>
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Prenom</ion-label>
+          <ion-input formControlName="prenom"></ion-input>
+          <ion-icon name="person" slot="start" color="primary"></ion-icon>
+        </ion-item>
+
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input formControlName="nom" required></ion-input>
+          <ion-icon name="person" slot="start" color="primary"></ion-icon>
+        </ion-item>
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email"></ion-input>
+          <ion-icon name="mail" slot="start" color="primary"></ion-icon>
+        </ion-item>
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Portable</ion-label>
+          <ion-input formControlName="portable"></ion-input>
+          <ion-icon src="assets/icon/phone.svg" slot="start" color="primary"></ion-icon>
+        </ion-item>
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Portable</ion-label>
+          <ion-input formControlName="phone"></ion-input>
+          <ion-icon name="call" slot="start" color="primary"></ion-icon>
+        </ion-item>
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating">Wilayates</ion-label>
+
+          <ion-select value="sharedService.districtList[1]" formControlName="wilaya" okText="Ok" cancelText="Annuler"
+            style="color: #fff;">
+            <ion-select-option *ngFor="let wilaya of wilaya" [selected]="wilaya== 'ADRAR	SHIE'" value="{{wilaya}}">
+              {{wilaya}}</ion-select-option>
+
+          </ion-select>
+          <ion-icon src="assets/icon/pin.svg" slot="start" color="primary"></ion-icon>
+
+        </ion-item>
+        <ion-item lines="none" class="background-transparent">
+          <ion-label color="light">je suis d'accord avec les Termes et conditions</ion-label><br>
+          <ion-checkbox formControlName="TAndC" slot="start"> </ion-checkbox>
+        </ion-item>
+        <ion-button class="button-starter" color="primary" routerLink="/tabs/contact">Demander un accès
+        </ion-button>
+      </form>
+    </div>
+  </div>
 </ion-content>
+<ion-footer>
+  <img src="assets/img/logo_NOVO.png">
+</ion-footer>

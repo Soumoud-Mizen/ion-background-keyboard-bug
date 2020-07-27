@@ -1,18 +1,18 @@
 ion-tab-bar,
 ion-tab-button {
-    background-color: #99ca3c;
+    background-color: #001965;
   
 }
 
 ion-icon, ion-label{ 
-    color: #ffffff;
+    color: #fff;
 }
 ion-tab-bar{
     --ion-color-primary: #fff;
 }
 ion-tab-button.tab-selected {
     ion-icon, ion-label {
-      color: #3d5542ed !important;
-      --ion-color-base:#3d5542ed !important;
+      color: #99ca3c !important;
+      --ion-color-base:#99ca3c !important;
     }
   }
