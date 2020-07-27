@@ -20,16 +20,18 @@
     <div *ngSwitchCase="'hemoragie'" style="height: 100%;">
 
 
-      <div>
+      <div class="image-container">
         <img src="assets/img/hemorragie.png" alt="Hémoragie">
+
+        <div class="image-text"> Hémoragie</div>
       </div>
       <div style="border: 1px solid;      height: 70%;">
         <div class="left-container">
           <div class="element-one"  [class.active-element]="between(range,80,120)">Hémorragie mettant en jeu le pronostic vital</div>
-          <div class="element-two" [class.active-element]="between(range,50,70)">Hémarthrose, hémorragie musculaire ou hématome plus étendus</div>
-          <div class="element-two" [class.active-element]="between(range,10,40)">Debut d'hémarthrose musculaire ou bucale</div>
+          <div class="element-two" [class.active-element]="between(range,40,70)">Hémarthrose, hémorragie musculaire ou hématome plus étendus</div>
+          <div class="element-two" [class.active-element]="between(range,10,30)" style="height: 25%;">Debut d'hémarthrose musculaire ou bucale</div>
         </div>
-        <div #ranger class="right-container">
+        <div #ranger class="right-container"> 
           <div class='rangeWrap'>
             <input #input (change)="change()" orient="vertical" name="foo" type="range" min="10" max="120" step="10"
               list="steplist" [(ngModel)]="range">
