@@ -4,7 +4,7 @@ $thumb-d: 1.1em;
 @mixin track() {
     box-sizing: border-box;
     // border: none;
-   // width: $track-w;
+    // width: $track-w;
     height: $track-h;
     background: -webkit-linear-gradient(0deg, #cbeb8e 0%, #a3d14c 39%, #6da700 100%);
 }
@@ -22,6 +22,7 @@ input[type="range"] {
     &,
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
+        pointer-events: auto;
     }
     position: relative;
     top: 50%;
@@ -59,13 +60,13 @@ input[type="range"] {
 }
 
 .left-container {
-   // border: 1px solid red;
+    // border: 1px solid red;
     float: left;
     width: 77%;
     height: 100%;
 }
 .right-container {
-   // border: 1px solid blue;
+    // border: 1px solid blue;
     height: 100%;
     width: 20%;
     float: left;
@@ -88,7 +89,6 @@ input[type="range"] {
     height: 10px;
     width: 1px;
     background: #a3d14c;
-
 }
 
 .ticks > div > div {
@@ -137,30 +137,85 @@ input[type="range"] {
     color: #fff;
     font-family: "Apis Bold" !important;
 }
-.bottom-container{
+.bottom-container {
     height: calc(30% - 70px);
     text-align: center;
 }
-.poids-container{
+.poids-container {
     width: 100%;
     padding: 12px;
     color: #001965;
-    margin: 8% 0;
+    margin: 5% 0;
 }
-.text-kilo{
+.text-kilo {
     width: 80%;
     float: left;
 }
-.poids-kilo{
+.poids-kilo {
     width: 20%;
     float: left;
-    font-family: 'Apis Bold' !important;
+    font-family: "Apis Bold" !important;
     border: 1px solid #99ca3c;
     text-align: center;
     box-shadow: inset 1px 2px 1px 0px #e3dede;
 }
-.button-starter{
+.button-starter {
     --border-radius: 30px;
-   --font-weight: bold;
-   height: 37px;
+    --font-weight: bold;
+    height: 37px;
+}
+.injection-hemo {
+    background: #001965;
+    clip-path: polygon(0 20%, 0 0, 100% 0, 100% 100%, 0 99%, 0 80%, 1% 80%, 1% 20%);
+    color: #fff;
+    font-size: 12px;
+    margin: 2% 5%;
+    border-radius: 3px;
+    padding: 1px 0;
+}
+.injection-hemo text {
+    color: #99ca3c;
+}
+.injection-details-hemo {
+    margin: 2% 5%;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: -1px 0px 12px 1px #dcdcdcba;
+    height: 30px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: #001965;
+}
+.injection-text-hemo {
+    margin: 2% 5%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: -1px 0px 12px 1px #dcdcdcba;
+    color: #001965;
+    font-size: 14px;
+    text-align: justify;
+    padding: 3%;
+}
+.first-one {
+    color: #fff;
+    background: #003d2b;
+    margin: 0 3px;
+}
+.second-one {
+    color: #fff;
+    background: #e1261c;
+    margin: 0 3px;
+}
+.third-one {
+    color: #fff;
+    background: #530740;
+    margin: 0 3px;
+}
+ion-item ion-label{
+    color: #001965;
+    font-size: 12px;
+    font-family: 'Apis Bold' !important;
+    text-transform: uppercase;
+    text-align: center;
 }

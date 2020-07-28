@@ -28,7 +28,6 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
     WebView,
     ReactiveFormsModule,
     DocumentViewer
-    
   ],
   bootstrap: [AppComponent]
 })

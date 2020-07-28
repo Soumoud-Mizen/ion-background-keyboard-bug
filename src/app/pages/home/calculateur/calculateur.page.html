@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [scrollY]="false">
   <ion-segment [(ngModel)]="segment" color='primary'>
     <ion-segment-button value="hemoragie">
       <ion-label>Hémoragie</ion-label>
@@ -16,9 +16,11 @@
       <ion-label>Prophylaxie</ion-label>
     </ion-segment-button>
   </ion-segment>
-  <div [ngSwitch]="segment" style="height: 91%;">
-    <div *ngSwitchCase="'hemoragie'" style="height: 100%;">
-      <!--<div class="image-container">
+  <div [ngSwitch]="segment" style="height: 91%; 
+  overflow-y: scroll;">
+    <div [hidden]="segment=='prophylaxie' || segment=='chirurgie' " style="height: 100%;">
+      <!--<div *ngSwitchCase="'hemoragie'" style="height: 100%;">
+      <div class="image-container">
         <img src="assets/img/hemorragie.png" alt="Hémoragie">
         <div class="image-text"> Hémoragie</div>
       </div>-->
@@ -74,31 +76,47 @@
               </div>
             </div>
           </div>
-
-
         </div>
-
       </div>
-
       <div class="bottom-container">
         <div class="poids-container">
           <div class="text-kilo">Poids du patient(en kilogramme) </div>
-          <div class="poids-kilo" (click)="openPicker($event)">{{weightHemo}} <ion-icon name="caret-down-outline"></ion-icon>
-
+          <div class="poids-kilo" (click)="openPicker($event)">{{weightHemo}} <ion-icon name="caret-down-outline">
+            </ion-icon>
           </div>
         </div>
         <ion-button class="button-starter" color="primary" (click)="submitHemo()">Valider
         </ion-button>
-     
+        <div class="injection-hemo">Nombre de UI nécessaire par injection*: <text>{{hemoResult.injection}}</text>
+          <p>*Détails de calcul dans le RCP</p>
+        </div>
+        <div class="injection-details-hemo">1 x <text class="first-one"> 1000 UI</text> + 1 x <text class="third-one">
+            250 UI</text></div>
+        <div class="injection-text-hemo">
+          Répeter l'injection toutes les 12 à 24 heures, pendant au moins 1 jou, jusqu'à la fin de l'episode hémorragir
+          ou l'obtention d'une cicatrisation
+        </div>
       </div>
     </div>
-    <div *ngSwitchCase="'chirurgie'">
+    <div [hidden]="segment=='hemoragie' || segment=='prophylaxie' ">
 
-
+      chirurgie
     </div>
-    <div *ngSwitchCase="'prophylaxie'">
-      prophylaxie
-
+    <div [hidden]="segment=='hemoragie'  || segment=='chirurgie'">
+      <ion-item lines="none">
+        <ion-label class="label-toggle">Patient plus<br>de 12 ans</ion-label>
+        <ion-toggle [(ngModel)]="pToggle" ></ion-toggle> 
+        <ion-label class="label-toggle">Patient moins<br>de 12 ans</ion-label>
+      </ion-item>
+      <ion-segment [(ngModel)]="prophySegment" color='primary'>
+        <ion-segment-button value="recommandee">
+          <ion-label>Récommandée</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="usuelle">
+          <ion-label>Usuelle</ion-label>
+        </ion-segment-button>
+       
+      </ion-segment>
     </div>
   </div>
 </ion-content>

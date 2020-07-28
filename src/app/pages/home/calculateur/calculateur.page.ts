@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
-import ageOptions from '../../../ages';
+import ageOptions from '../../../poids';
 import { from } from 'rxjs';
 @Component({
   selector: 'app-calculateur',
@@ -10,14 +10,19 @@ import { from } from 'rxjs';
 })
 
 export class CalculateurPage implements OnInit {
-  @ViewChild('ranger') div: ElementRef;
-  @ViewChild('input') input: ElementRef;
-  @ViewChild('ticks') ticks: ElementRef;
+  @ViewChild('ranger', { static: false }) div: ElementRef;
+  @ViewChild('input', { static: false }) input: ElementRef;
+  @ViewChild('ticks', { static: false }) ticks: ElementRef;
 
   segment = 'hemoragie';
+  prophySegment = 'recommandee';
   range = 30;
   value = 200;
   weightHemo = '25';
+  pToggle= false;
+  hemoResult = {
+    injection: 1008
+  };
   constructor(public picker: PickerController) { }
 
   ngOnInit() {
@@ -31,7 +36,15 @@ export class CalculateurPage implements OnInit {
     this.ticks.nativeElement.style.width = height - 30 + 'px';
     this.ticks.nativeElement.style.transform = `translate(-45%, ${marginTopTicks}px) rotate(-90deg)`;
   }
-  change() {
+  onSegmentChange() {
+
+    const height = this.div.nativeElement.offsetHeight;
+    const marginTopInput = (height / 2) - 16; const marginTopTicks = (height / 2) - 21;
+    this.input.nativeElement.style.width = height - 30 + 'px';
+    this.input.nativeElement.style.transform = `translate(-34%, ${marginTopInput}px) rotate(-90deg)`;
+    this.ticks.nativeElement.style.width = height - 30 + 'px';
+    this.ticks.nativeElement.style.transform = `translate(-45%, ${marginTopTicks}px) rotate(-90deg)`;
+  } change() {
     if (this.between(this.range, 10, 30)) {
 
     }
@@ -72,7 +85,7 @@ export class CalculateurPage implements OnInit {
     });
   }
   submitHemo() {
-    console.log('age : ', this.weightHemo, ' intensité : ', this.detectHemoRanger(this.range));
+    console.log('poids : ', this.weightHemo, ' intensité : ', this.detectHemoRanger(this.range));
 
   }
   between(x, min, max) {
