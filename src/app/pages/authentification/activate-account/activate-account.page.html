@@ -51,14 +51,14 @@
         <ion-item lines="none" class="background-transparent terms">
 
           <ion-label color="light">je suis d'accord avec les Termes et conditions</ion-label><br>
-          <ion-checkbox formControlName="TAndC" slot="start"> </ion-checkbox>
+          <ion-checkbox formControlName="tAndC" slot="start"> </ion-checkbox>
         </ion-item>
         <ion-item class="background-transparent" lines="none">
           <ion-label color="light">Activer la notification par email</ion-label><br>
-          <ion-checkbox formControlName="TAndC" slot="start"> </ion-checkbox>
+          <ion-checkbox formControlName="notifEmail" slot="start"> </ion-checkbox>
 
         </ion-item>
-        <ion-button class="button-starter" color="primary" routerLink="/tabs/contact">Activer mon compte
+        <ion-button class="button-starter" (click)="activateAccount()" color="primary" routerLink="/tabs/calculateur">Activer mon compte
         </ion-button>
       </form>
     </div>

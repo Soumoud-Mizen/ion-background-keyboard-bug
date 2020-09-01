@@ -43,7 +43,7 @@
 
           <ion-select value="sharedService.districtList[1]" formControlName="wilaya" okText="Ok" cancelText="Annuler"
             style="color: #fff;">
-            <ion-select-option *ngFor="let wilaya of wilaya" [selected]="wilaya== 'ADRAR	SHIE'" value="{{wilaya}}">
+            <ion-select-option *ngFor="let wilaya of wilaya"  value="{{wilaya}}">
               {{wilaya}}</ion-select-option>
 
           </ion-select>
@@ -54,7 +54,7 @@
           <ion-label color="light">je suis d'accord avec les Termes et conditions</ion-label><br>
           <ion-checkbox formControlName="TAndC" slot="start"> </ion-checkbox>
         </ion-item>
-        <ion-button class="button-starter" color="primary" routerLink="/tabs/contact">Demander un accès
+        <ion-button class="button-starter" color="primary" routerLink="/tabs/calculateur">Demander un accès
         </ion-button>
       </form>
     </div>
