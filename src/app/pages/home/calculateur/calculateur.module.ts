@@ -16,6 +16,6 @@ import { CalculateurPage } from './calculateur.page';
     CalculateurPageRoutingModule
   ],
   declarations: [CalculateurPage],
-  schemas:[NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class CalculateurPageModule {}

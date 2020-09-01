@@ -17,7 +17,7 @@
     </ion-segment-button>
   </ion-segment>
   <div [ngSwitch]="segment" style="height: 91%; 
-  overflow-y: scroll;">
+  overflow-y: scroll; overflow-x: hidden;">
     <div [hidden]="segment=='prophylaxie' || segment=='chirurgie' " style="height: 100%;">
       <!--<div *ngSwitchCase="'hemoragie'" style="height: 100%;">
       <div class="image-container">

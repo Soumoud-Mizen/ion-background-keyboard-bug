@@ -19,7 +19,7 @@ export class CalculateurPage implements OnInit {
   range = 30;
   value = 200;
   weightHemo = '25';
-  pToggle= false;
+  pToggle = false;
   hemoResult = {
     injection: 1008
   };
@@ -37,14 +37,15 @@ export class CalculateurPage implements OnInit {
     this.ticks.nativeElement.style.transform = `translate(-45%, ${marginTopTicks}px) rotate(-90deg)`;
   }
   onSegmentChange() {
-
     const height = this.div.nativeElement.offsetHeight;
     const marginTopInput = (height / 2) - 16; const marginTopTicks = (height / 2) - 21;
     this.input.nativeElement.style.width = height - 30 + 'px';
     this.input.nativeElement.style.transform = `translate(-34%, ${marginTopInput}px) rotate(-90deg)`;
     this.ticks.nativeElement.style.width = height - 30 + 'px';
     this.ticks.nativeElement.style.transform = `translate(-45%, ${marginTopTicks}px) rotate(-90deg)`;
-  } change() {
+  }
+
+  change() {
     if (this.between(this.range, 10, 30)) {
 
     }
@@ -58,7 +59,9 @@ export class CalculateurPage implements OnInit {
 
   }
   async openPicker(event) {
-    if (!event.cancelable) { event.preventDefault(); }
+    if (!event.cancelable) {
+      event.preventDefault();
+    }
     const opt: PickerOptions = {
       buttons: [{
         text: 'Annuler',
