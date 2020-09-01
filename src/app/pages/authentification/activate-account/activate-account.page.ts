@@ -62,17 +62,17 @@ export class ActivateAccountPage implements OnInit {
 
   ngOnInit() {
     this.createAccount = new FormGroup({
-      prenom: new FormControl('', [Validators.required]),
-      nom: new FormControl('', [Validators.required]),
+      firstname: new FormControl('', [Validators.required]),
+      lastname: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       portable: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required]),
       wilaya: new FormControl('', [Validators.required]),
-      TAndC: new FormControl(false),
-      emailfeed: new FormControl(false)
+      tAndC: new FormControl(false),
+      notifEmail: new FormControl(false)
     });
   }
-  processForm() {
+  activateAccount() {
     console.log(this.createAccount.value);
 
   }

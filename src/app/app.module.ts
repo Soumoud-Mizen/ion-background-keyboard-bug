@@ -14,10 +14,12 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
