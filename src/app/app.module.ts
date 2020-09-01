@@ -30,7 +30,6 @@ import { HttpClientModule } from '@angular/common/http';
     WebView,
     ReactiveFormsModule,
     DocumentViewer
-    
   ],
   bootstrap: [AppComponent]
 })

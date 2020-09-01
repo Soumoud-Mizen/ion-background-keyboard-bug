@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,19 +24,22 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-ion-toolbar{
+ion-toolbar {
     --background: #001965;
-    ion-title{
+    ion-title {
         color: #fff;
     }
 }
-ion-app.platform-ios12 ion-content { pointer-events: auto; }
+ion-app.platform-ios12 ion-content {
+    pointer-events: auto;
+}
 ion-footer {
     &.footer-md::before {
         background-image: none;
     }
 }
 
-.native-input.sc-ion-input-md{
-margin-left: 10px;
+.native-input.sc-ion-input-md {
+    margin-left: 10px;
 }
+

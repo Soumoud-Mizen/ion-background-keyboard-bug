@@ -22,7 +22,7 @@ export class Service {
     return this.http.get(`${this.baseUrl}user/getWilawa`)
   }
 
-  getContact(): Observable<any> {
+  getContact(idUser): Observable<any> {
     return this.http.get(`${this.baseUrl}user/getWilaya`, idUser)
   }
 }
