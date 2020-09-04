@@ -17,7 +17,7 @@
 
                 <ion-item class="background-transparent" lines="none">
                     <ion-label position="floating" color="light">
-                        Code d'acivation de compte
+                        Code d'activation de compte
                     </ion-label>
                     <ion-input type="password" formControlName="code" required></ion-input>
                 </ion-item>
@@ -34,11 +34,11 @@
                 </div>
                 <br>
 
-                <ion-button class="button-starter" color="primary" routerLink="/activate-account">Valider
+                <ion-button class="button-starter" color="primary" (click)='validate()'>Valider
                 </ion-button>
 <br>                            <div style="bottom:0;  color:#eee">
                     <p>je n'ai pas de code: <text (click)="forgotCode()">Obtenir un code</text></p>
-        <p>je sui déjà enregistré et j'ai besion <text routerLink="/create-account">d'un nouveau code d'activation</text>
+        <p>je suis déjà enregistré et j'ai besion <text routerLink="/create-account">d'un nouveau code d'activation</text>
           </p>
                 </div>
                 <br />

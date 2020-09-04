@@ -14,10 +14,10 @@ const routes: Routes = [
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  {
+  /*{
     path: 'calculateur',
     loadChildren: () => import('./pages/home/calculateur/calculateur.module').then(m => m.CalculateurPageModule)
-  },
+  },*/
   {
     path: 'activate-account',
     loadChildren: () => import('./pages/authentification/activate-account/activate-account.module').then(m => m.ActivateAccountPageModule)
