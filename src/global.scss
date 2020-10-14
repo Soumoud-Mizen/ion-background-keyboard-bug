@@ -56,9 +56,12 @@ ion-footer {
     background-color: #ffffff;
 }
 .my-custom-modal-css .modal-wrapper {
-    height: 50%;
+    height: 60%;
     width: 80%;
     border-radius: 16px;
     position: absolute; 
     display: block;  
+ }
+ .inner-scroll{
+     height: 100% !important;
  }

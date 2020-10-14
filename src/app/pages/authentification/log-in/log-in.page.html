@@ -1,47 +1,47 @@
+
 <ion-content>
 
     <div class="background-image">
 
 
-        <div class="logo-row">
+       <div class="logo-row">
             <img src="assets/img/calcul.png" alt="logo">
         </div>
-        <div class="wel-tect">
-            Calculez la dose de<br>
-            <b style="color: #99ca3c;"> NovoEight<span class="sup">&#174;</span></b> à injecter
+        <div class="wel-text">
+            <div class="wel-text-child">
+                Calculez la dose de<br>
+                <b style="color: #99ca3c;"> NovoEight<span class="sup">&#174;</span></b> à injecter
+
+            </div>
+
         </div>
+        <div class="wel-text">
+            <div class="wel-text-child">
 
-        <div class="btns-ctn">
+                <form [formGroup]="loginform">
 
-            <form [formGroup]="loginform" class="ctn-controls ">
+                    <ion-item class="background-transparent" lines="none">
 
-                <ion-item class="background-transparent" lines="none">
-
-                    <ion-input type="text" formControlName="code" required
-                        placeholder=" Code d'activation de compte">
-                        <ion-icon src="assets/icon/locked.svg" color="light"></ion-icon>
-                    </ion-input>
-                </ion-item>
-
-                
-                <br>
-
+                        <ion-input type="text" formControlName="code" required
+                            placeholder=" Code d'activation de compte">
+                            <ion-icon src="assets/icon/locked.svg" color="light"></ion-icon>
+                        </ion-input>
+                    </ion-item>
+                </form>
                 <ion-button class="button-starter" color="primary" (click)='validate()'>Valider
                 </ion-button>
-                <br>
-                <div style="bottom:0;  color:#eee">
-                    <p>je n'ai pas de code: <text (click)="forgotCode()">Obtenir un code</text></p>
-                    <p>je suis déjà enregistré et j'ai besion <text routerLink="/create-account">d'un nouveau code
-                            d'activation</text>
-                    </p>
-                </div>
-                <br />
-            </form>
+            </div>
         </div>
+
+        <div class="code-text">
+            <div class="wel-text-child">
+                <p>je n'ai pas de code: <text (click)="forgotCode()"><u><b> Obtenir un code</b></u></text></p>
+                <p>je suis déjà enregistré et j'ai besion d'un nouveau code<br>
+                    d'activation: <u routerLink="/create-account"><b>Demande de nouveau code</b></u>
+                </p>
+            </div>
+        </div>
+       
 
     </div>
 </ion-content>
-
-<ion-footer>
-    <img src="assets/img/logo.png">
-</ion-footer>

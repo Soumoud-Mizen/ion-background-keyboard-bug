@@ -1,51 +1,49 @@
-.bg {
-    padding-bottom: 0 !important;
-    background: url(/assets/img/login.png) 0 0/100% 100% no-repeat !important;
-    height: -webkit-fill-available !important;
-    width: 100% !important;
-    background-size: cover !important;
-    background-position: center center !important;
-}
+
 .background-image {
     padding-bottom: 0 !important;
     background: url(/assets/img/login.png) 0 0/100% 100% no-repeat !important;
     height: -webkit-fill-available !important;
     width: 100% !important;
-    background-size: cover !important;
+    //background-size: 100% !important;
     background-position: center center !important;
+  position: relative;
 }
-
 .logo-row {
     background: #fff;
     height: 22%;
+}
+.wel-text {
+    font-size: 1.2em;
+    height: 24%  !important;
+    color: #fff;
+    font-style: "Apis Regular" !important;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+}
+.wel-text-child{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+}
+.code-text {
+    color: var(--ion-color-novo);
+    font-size: 12px;
+    font-family: "Apis Regular";
+    position: relative;
+    text-align: center;
+    height: 20%  !important;
 }
 .sup {
     font-size: 10px;
     vertical-align: super;
 }
-.btns-ctn {
-    position: absolute;
-    text-align: center;
-    width: 96%;
-    height: 50%;
-    bottom: 5%;
-    right: 2%;
-    left: 2%;
-
-    border-radius: 15px;
+b{
+    font-family: "Apis Bold";
 }
-.wel-tect {
-    font-size: 1.2em;
-    width: 100%;
-    color: #fff;
-
-    font-style: "Apis Regular" !important;
-    text-align: center;
-    text-transform: uppercase;
-    bottom: 60%;
-    position: absolute;
-}
-
 .button-starter {
     --border-radius: 30px;
     width: 40%;
@@ -58,11 +56,14 @@ ion-input {
         color: #fff !important;
         margin-left: 30px !important;
     }
+    ion-icon{
+            margin-right: 10px;
+    }
     color: #fff;
     border-bottom: 1px solid #fff;
 }
-
-text {
-    color: var(--ion-color-primary);
-    text-decoration: underline;
+.inner-scroll{
+    height: 100% !important;
 }
+
+
