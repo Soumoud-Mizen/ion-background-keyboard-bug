@@ -1,46 +1,42 @@
-.container{
-    background: #001965;
+.container {
+    overflow-y: scroll !important;
     height: 100%;
     width: 100%;
 }
 
 .btns-ctn {
-    position: absolute;
     text-align: center;
-    width: 96%;
-    height: 50%;
-    bottom: 5%;
-    right: 2%;
-    left: 2%;
-    background: #001965;
-    border-radius: 15px;
+    height: 52%;
 }
-.wel-tect {
-    font-size: 1em;
-    width: 100%;
-    color: #ffffff;
-    font-weight: bold;
-    font-style: 'Apis Regular' !important;
+h1 {
+    color: var(--ion-color-novo);
+    font-size: 19px;
+    display: block;
     text-align: center;
-    text-transform: uppercase;
-    bottom: 62%;
-    position: absolute;
+    font-family: "APIS BOLD" !important;
 }
 
-.background-transparent{
+.background-transparent {
     --background: transparent;
 }
-ion-input{
-    color: #fff;
-    border-left: 1px solid var(--ion-color-primary);
-    border-bottom: 1px solid var(--ion-color-primary);
-}
-.button-starter{
-    --border-radius: 30px;
-  --color: var(--ion-color-primary);
-  --font-weight: bold;
 
+ion-input {
+    color: var(--ion-color-novo);
+    border-bottom: 1px solid var(--ion-color-novo);
 }
-p{
-    color: #fff;
+.button-starter {
+    --border-radius: 30px;
+    --color: var(--ion-color-primary);
+    --font-weight: bold;
+    height: 30px;
+    margin-top: 20px;
+}
+p {
+    color: var(--ion-color-novo);
+    font-size: 12px;
+    margin: 0px 45px;
+}
+
+ion-icon {
+    font-size: 1.4rem;
 }

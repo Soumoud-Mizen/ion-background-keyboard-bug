@@ -1,45 +1,39 @@
 <ion-content>
+
     <div class="background-image">
 
 
         <div class="logo-row">
-            <img class="logo-home" src="assets/img/logo.png" alt="logo">
+            <img src="assets/img/calcul.png" alt="logo">
         </div>
         <div class="wel-tect">
-            Calculateur de dose selon<br>
-            la posologie de<br>
-            produit NOVOEIGHT
+            Calculez la dose de<br>
+            <b style="color: #99ca3c;"> NovoEight<span class="sup">&#174;</span></b> à injecter
         </div>
 
         <div class="btns-ctn">
-            
+
             <form [formGroup]="loginform" class="ctn-controls ">
 
                 <ion-item class="background-transparent" lines="none">
-                    <ion-label position="floating" color="light">
-                        Code d'activation de compte
-                    </ion-label>
-                    <ion-input type="password" formControlName="code" required></ion-input>
+
+                    <ion-input type="text" formControlName="code" required
+                        placeholder=" Code d'activation de compte">
+                        <ion-icon src="assets/icon/locked.svg" color="light"></ion-icon>
+                    </ion-input>
                 </ion-item>
 
-                <div *ngIf="submitted && loginform.password.errors" class="invalid-feedback">
-                    <ion-item *ngIf="loginform.password.errors.required">
-                        <p style="color:red">Mot de passe requis !</p>
-                    </ion-item>
-                    <ion-item *ngIf="loginform.password.errors.minlength">
-                        <p style="color:red">
-                            Le mot de passe doit être au moins de 6 caractères !
-                        </p>
-                    </ion-item>
-                </div>
+                
                 <br>
 
                 <ion-button class="button-starter" color="primary" (click)='validate()'>Valider
                 </ion-button>
-<br>                            <div style="bottom:0;  color:#eee">
+                <br>
+                <div style="bottom:0;  color:#eee">
                     <p>je n'ai pas de code: <text (click)="forgotCode()">Obtenir un code</text></p>
-        <p>je suis déjà enregistré et j'ai besion <text routerLink="/create-account">d'un nouveau code d'activation</text>
-          </p>
+                    <p>je suis déjà enregistré et j'ai besion <text routerLink="/create-account">d'un nouveau code
+                            d'activation</text>
+                    </p>
                 </div>
                 <br />
             </form>
@@ -49,5 +43,5 @@
 </ion-content>
 
 <ion-footer>
-    <img src="assets/img/logo_NOVO.png">
+    <img src="assets/img/logo.png">
 </ion-footer>

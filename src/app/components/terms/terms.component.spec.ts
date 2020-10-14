@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { RangerHemoComponent } from './ranger-hemo.component';
+import { TermsComponent } from './terms.component';
 
-describe('RangerHemoComponent', () => {
-  let component: RangerHemoComponent;
-  let fixture: ComponentFixture<RangerHemoComponent>;
+describe('TermsComponent', () => {
+  let component: TermsComponent;
+  let fixture: ComponentFixture<TermsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RangerHemoComponent ],
+      declarations: [ TermsComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(RangerHemoComponent);
+    fixture = TestBed.createComponent(TermsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

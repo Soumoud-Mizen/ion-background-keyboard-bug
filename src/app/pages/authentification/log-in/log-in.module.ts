@@ -8,6 +8,7 @@ import { LogInPageRoutingModule } from './log-in-routing.module';
 import { LogInPage } from './log-in.page';
 import { ForgotCodeComponent } from 'src/app/components/forgot-code/forgot-code.component';
 
+
 @NgModule({
   imports: [
     CommonModule, 

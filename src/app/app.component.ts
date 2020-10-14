@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  public rcpListTable: any = [];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -20,6 +21,7 @@ export class AppComponent {
     public router: Router
   ) {
     this.initializeApp();
+    this.getRcp();
   }
 
   initializeApp() {
@@ -35,5 +37,19 @@ export class AppComponent {
       });
     });
 
+  }
+
+  getRcp() {
+    this.service.getRcp().subscribe((result) => {
+      this.rcpListTable = result;
+      this.service.currentRcp = this.rcpListTable.sections[0].content;
+    });
+  }
+  openRcp(key) {
+    console.log(this.rcpListTable.sections);
+    this.service.currentRcp = this.rcpListTable.sections[key].content;
+  }
+  openIntro() {
+    this.service.currentRcp = this.rcpListTable.header.subTitle + '<br> ' + this.rcpListTable.header.header ;
   }
 }

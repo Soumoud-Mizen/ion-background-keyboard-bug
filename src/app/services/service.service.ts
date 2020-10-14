@@ -10,6 +10,8 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 export class Service {
   baseUrl = 'https://calcul8-pp.pixelslabs.com/api/';
   authState = new BehaviorSubject(false);
+  terms = false;
+  currentRcp = '';
   constructor(
     public http: HttpClient,
     private nStorage: NativeStorage) { }
@@ -35,6 +37,10 @@ export class Service {
     return this.http.get(`${this.baseUrl}terms-and-condition`);
   }
 
+  getRcp(): Observable<any> {
+    return this.http.get(`${this.baseUrl}rcp-document-section`);
+  }
+
   ifLoggedIn() {
     this.nStorage.getItem('appState').then((response) => {
       if (response) {
@@ -47,4 +53,5 @@ export class Service {
   isAuthenticated() {
     return this.authState.value;
   }
+
 }

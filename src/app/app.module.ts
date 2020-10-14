@@ -15,9 +15,10 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { HttpClientModule } from '@angular/common/http';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SafeHtmlPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     NativeStorage,
     WebView,
     ReactiveFormsModule,
-    DocumentViewer
+    DocumentViewer,
+    
   ],
   bootstrap: [AppComponent]
 })

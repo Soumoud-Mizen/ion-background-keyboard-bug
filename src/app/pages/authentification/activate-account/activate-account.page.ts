@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Service } from 'src/app/services/service.service';
+import { TermsComponent } from 'src/app/components/terms/terms.component';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-activate-account',
@@ -206,7 +208,8 @@ export class ActivateAccountPage implements OnInit {
   ];
   constructor(
     public router: Router,
-    public service: Service) { }
+    public service: Service,
+    public modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.createAccount = new FormGroup({
@@ -216,29 +219,36 @@ export class ActivateAccountPage implements OnInit {
       portable: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required]),
       wilaya: new FormControl('', [Validators.required]),
-      tAndC: new FormControl(false),
+      tAndC: new FormControl(this.service.terms),
       notifEmail: new FormControl(false)
     });
     this.service.getwilaya().subscribe((result) => {
       this.wilaya = result;
     });
   }
-  activateAccount() {
-    const data = this.createAccount.value;
-    data.wilaya = data.wilaya * 1;
-    // remove it after fixing bugs on backend side
-    this.service.registerUser(data).subscribe((responce) => {
-      if (responce.error) {
-
-        alert(responce.message);
-      } else {
-        this.router.navigate(['log-in']);
-      }
-      console.log(responce);
-
-    });
-
-
+ async  activateAccount() {
+    if (!this.service.terms) {
+      const modal = await this.modalCtrl.create({
+        component: TermsComponent,
+        cssClass: 'my-custom-class',
+        swipeToClose: true,
+      });
+      return await modal.present();
+    } else {
+      const data = this.createAccount.value;
+      data.wilaya = data.wilaya * 1;
+      data.tAndC = this.service.terms;
+      // remove it after fixing bugs on backend side
+      this.service.registerUser(data).subscribe((responce) => {
+        if (responce.error) {
+          alert(responce.message);
+        } else {
+          this.router.navigate(['log-in']);
+        }
+        console.log(responce);
+      });
+    }
+    
   }
 
 }

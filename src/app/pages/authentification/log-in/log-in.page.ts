@@ -26,7 +26,7 @@ export class LogInPage implements OnInit {
   forgotCode() {
     this.modalCtrl.create({
       component: ForgotCodeComponent,
-
+      cssClass: 'my-custom-modal-css'
     }).then((modal) => {
       modal.present();
     });

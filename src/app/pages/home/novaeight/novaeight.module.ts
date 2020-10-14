@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { NovaeightPage } from './novaeight.page';
 
 import { NovaeightPageRoutingModule } from './novaeight-routing.module'
+import { SafeHtmlPipe } from 'src/app/pipes/safe-html.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { NovaeightPageRoutingModule } from './novaeight-routing.module'
     RouterModule.forChild([{ path: '', component: NovaeightPage }]),
     NovaeightPageRoutingModule,
   ],
-  declarations: [NovaeightPage]
+  declarations: [NovaeightPage, SafeHtmlPipe]
 })
 export class Tab3PageModule {}

@@ -1,12 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> NovoEight </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="providerMenu" slot="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title> RCP </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-button (click)="openPdf()">
-open Pdf
-</ion-button>
+  <div>
+    <div  [innerHtml]="service.currentRcp | safeHtml"></div>
+  </div>
 
 </ion-content>

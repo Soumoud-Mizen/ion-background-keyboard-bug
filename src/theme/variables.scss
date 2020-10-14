@@ -9,7 +9,7 @@
   --ion-color-primary-contrast: #d0ec9a;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #acd460;
-  --ion-color-primary-tint: #99ca3c;
+  --ion-color-primary-tint: #f9faf9;
 
   /** secondary **/
   --ion-color-secondary: #3dc2ff;
@@ -74,6 +74,13 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+  /** NOVO **/
+  --ion-color-novo: #001965;
+  --ion-color-novo-rgb:(0, 25, 101);
+  --ion-color-novo-contrast: #001965;
+  --ion-color-novo-contrast-rgb: 0, 0, 0;
+  --ion-color-novo-shade: #001965c5;
+  --ion-color-novo-tint: #03258bc7;
 }
 
 @media (prefers-color-scheme: dark) {

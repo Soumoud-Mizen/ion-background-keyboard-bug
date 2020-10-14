@@ -1,29 +1,29 @@
-<ion-header>
-  <ion-toolbar style="--background: transparent;">
-    <ion-buttons slot="end">
-      <button ion-button icon-only (click)="closeModal()">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 <ion-content>
   <div class="container">
-    <div class="wel-tect">
+
+    <ion-item lines="none" class="close-fake ion-text-center">
+      <ion-button (click)="closeModal()" fill="clear" color="novo" slot="end">
+        <ion-icon name="close" slot="end"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <h1>
       Demand de code<br>
-      d'activation<br>
-    </div>
+      d'activation
+    </h1>
+  
+  
     <div class="btns-ctn">
-
+  
       <form [formGroup]="codeForm" class="ctn-controls ">
-<p>
-  Vous avez déjà un compte?
-Vous souhaitez recevoir un nouveau
-code d’activation?
-</p>
-
-        <ion-item class="background-transparent" lines="none" style="margin: 20px;">
-          <ion-label position="floating" color="light">
+        <p>
+          Vous avez déjà un compte?
+          Vous souhaitez recevoir un nouveau
+          code d’activation?
+        </p>
+     
+        <ion-item class="background-transparent" lines="none">
+          <ion-label position="floating" style="color: var(--ion-color-novo)">
+            <ion-icon src="assets/icon/mail.svg"></ion-icon>
             Votre Email
           </ion-label>
           <ion-input type="text" formControlName="email"></ion-input>
@@ -32,6 +32,6 @@ code d’activation?
         </ion-button>
       </form>
     </div>
-
   </div>
+
 </ion-content>

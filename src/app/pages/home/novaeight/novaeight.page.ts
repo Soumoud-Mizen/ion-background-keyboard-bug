@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
+// import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
+import { Service } from 'src/app/services/service.service';
 
 @Component({
   selector: 'app-novaeight',
@@ -9,14 +10,6 @@ import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-vi
 export class NovaeightPage {
 
   constructor(
-    public docViewer: DocumentViewer  ) {}
-
-    openPdf(){
-      const options: DocumentViewerOptions = {
-        title: 'My PDF'
-      }
-      
-      this.docViewer.viewDocument('assets/files/cin.pdf', 'application/pdf', options)
-    }
+    public service: Service) { }
 
 }
